@@ -1,0 +1,8 @@
+<% if  logged_in? %>
+    <% user = current_user %>
+    <a class="navbar-brand" href="<%= user_path(user)%>"><%= "#{user.name}'s Profile" %></a>
+    <a class="navbar-brand"  data-method="get" href="<%= logout_path %>">Log Out</a>
+<% else %>
+    <a class="navbar-brand" href="<%= signin_path %>">Log In</a>
+    <a class="navbar-brand" href="<%= signup_path %>">Sign Up</a>
+<% end %>
