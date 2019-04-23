@@ -1,0 +1,24 @@
+<h3>Sign Up</h3>
+
+<%= form_tag users_path do %>
+<%= hidden_field_tag 'user[admin]', 'false' %>
+<label>Name</label>
+<%= text_field_tag :'user[name]' %>
+
+<label>Password</label>
+<%= text_field_tag :'user[password]', required: true %>
+
+<label>Height</label>
+<%= text_field_tag :'user[height]' %>
+
+<label>Happiness</label>
+<%= text_field_tag :'user[happiness]' %>
+
+<label>Nausea</label>
+<%= text_field_tag :'user[nausea]' %>
+
+<label>Tickets</label>
+<%= text_field_tag :'user[tickets]' %>
+
+<%= submit_tag "Create User" %>
+<% end %>
