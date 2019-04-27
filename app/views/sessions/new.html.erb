@@ -1,0 +1,11 @@
+<%=form_for(@user, url: {action: "create"}) do |f|%>
+
+<%=f.collection_select :name, User.all, :id, :name%>
+<br><br>
+
+<%=f.label :password%>
+<%=f.text_field :password, id: "password"%>
+<br><br>
+
+<%=f.submit "Sign In"%>
+<%end%>

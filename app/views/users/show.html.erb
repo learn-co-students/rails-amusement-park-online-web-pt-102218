@@ -1,0 +1,18 @@
+<%if @user.admin %>
+    ADMIN
+<% end %>
+
+<p id="notice"><%= notice %></p>
+<p id="alert"><%= alert %></p>
+
+<%=@user.name%>
+<br><br>
+<%=@user.height%>
+<br><br>
+
+Tickets: <%=@user.tickets%>
+
+Mood: <%=@user.mood%>
+
+
+<%= link_to "See attractions", attractions_path %>
