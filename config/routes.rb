@@ -10,4 +10,5 @@ Rails.application.routes.draw do
   post '/signin', to: 'sessions#create'
   resources :sessions
   resources :attractions 
+  resources :rides
 end

@@ -1,6 +1,7 @@
 
 <% require 'pry' %> 
 <% @attractions.each do |a| %> 
-   <h1> <%= a.name %> </h1> 
+    
+    <%= link_to "Go on #{a.name}", attraction_path(a) %>
     
 <%end%> 
