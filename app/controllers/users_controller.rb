@@ -1,7 +1,11 @@
 class UsersController < ApplicationController
 
     def show
+       if is_logged_in?
         @user = User.find_by(params[:id])
+       else
+        redirect_to '/'
+       end
     end
 
     def new
@@ -22,6 +26,10 @@ class UsersController < ApplicationController
         end
 
         #need DESTROY method to log out user, delete session[:user_id].delete :name
+    end
+
+    def destroy
+        session.delete :name
     end
 
 

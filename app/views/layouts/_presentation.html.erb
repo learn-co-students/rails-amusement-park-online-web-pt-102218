@@ -1,0 +1,7 @@
+if is_logged_in?
+    <a class="navbar-brand" href="<%= user_path(user) %>"/><%= "#{user.name}" %></a>
+    <a class="navbar-brand" href="<%= user_path(user), method: "delete" %>"/>Log out</a>
+else
+    <a class="navbar-brand" href="<%= sign_up_path %>"/>Sign Up</a>
+    <a class="navbar-brand" href="<%= signin_path %>"/>Log in</a>
+end
