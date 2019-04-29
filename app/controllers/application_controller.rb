@@ -7,7 +7,6 @@ class ApplicationController < ActionController::Base
   end
 
   def admin?
-    binding.pry
     self.admin == true
   end
 end

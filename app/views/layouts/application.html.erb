@@ -18,7 +18,7 @@
             <span class="icon-bar"></span>
           </button>
         <a class="navbar-brand" href="<%= root_url %>"/>Home</a>
-        <%= render partial: "layouts/presentation", locals: {user: User.find_by(id: session[:user_id])} %>
+        <%= render partial: "layouts/presentation", locals: {user: @user} %>
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
