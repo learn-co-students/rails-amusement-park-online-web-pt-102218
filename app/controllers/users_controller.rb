@@ -13,26 +13,14 @@ class UsersController < ApplicationController
     end
 
     def create
-        if User.find_by(params[:id])
-            @user = User.find_by(params[:id]) 
-            session[:user_id] = @user.id
-            redirect_to user_path(@user)
-        elsif
-            @user = User.create(user_params)
+        @user = User.new(user_params)
+        if @user.save
             session[:user_id] = @user.id
             redirect_to user_path(@user)
         else
             render :'welcome/home'
         end
-
-        #need DESTROY method to log out user, delete session[:user_id].delete :name
     end
-
-    def destroy
-        session.delete :user_id
-        redirect_to '/'
-    end
-
 
     private
 

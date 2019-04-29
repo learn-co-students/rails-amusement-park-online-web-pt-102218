@@ -6,8 +6,9 @@ class User < ActiveRecord::Base
 
 
 
+
     def mood
-        if self.present?
+        if self.present? && self.admin == false
             if self.nausea > self.happiness
              mood = "sad"
             else

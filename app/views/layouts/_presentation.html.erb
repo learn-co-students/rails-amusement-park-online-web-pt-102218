@@ -1,8 +1,0 @@
-@user = User.find_by(id: session[:user_id])
-if @user != nil && is_logged_in? == true 
-    <a class="navbar-brand" <%= link_to "#{user.name}", user_path(user) %>/></a>
-    <a class="navbar-brand" <%= link_to "Log out", user_path(user), method: "delete" %>/></a>
-else
-    <a class="navbar-brand" href="<%= sign_up_path %>"/>Sign Up</a>
-    <a class="navbar-brand" href="<%= signin_path %>"/>Log in</a>
-end

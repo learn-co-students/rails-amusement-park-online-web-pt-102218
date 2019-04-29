@@ -18,7 +18,8 @@
             <span class="icon-bar"></span>
           </button>
         <a class="navbar-brand" href="<%= root_url %>"/>Home</a>
-        <%= render partial: "layouts/presentation", locals: {user: @user} %>
+        <a class="navbar-brand" href="<%= sign_up_path %>"/>Sign Up</a>
+        <a class="navbar-brand" href="<%= signin_path %>"/>Log in</a>
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
