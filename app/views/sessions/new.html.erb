@@ -1,0 +1,5 @@
+<%= form_tag do %>
+  <%=select_tag(:user_name, options_from_collection_for_select(User.all, :name, :name)) %>
+  <%=password_field_tag(:password)%>
+  <%=submit_tag('Sign In') %>
+<% end %>
