@@ -9,10 +9,10 @@ class User < ActiveRecord::Base
 
     def mood
         if self.present? && self.admin == false
-            if self.nausea > self.happiness
-             mood = "sad"
+            if self.happiness > self.nausea
+             return "happy"
             else
-             mood = "happy"
+             return "sad"
             end
         end
     end

@@ -16,7 +16,7 @@ class UsersController < ApplicationController
         @user = User.new(user_params)
         if @user.save
             session[:user_id] = @user.id
-            redirect_to user_path(@user)
+            redirect_to user_path(current_user)
         else
             render :'welcome/home'
         end
@@ -24,8 +24,8 @@ class UsersController < ApplicationController
 
     def ride
         @ride = Ride.new(user_id: current_user.id, attraction_id: params[:format])
-        msg = @ride.take_ride
-        redirect_to user_path(current_user), :alert => msg
+        @msg = @ride.take_ride
+        redirect_to user_path(current_user), :alert => @msg
     end
 
     private

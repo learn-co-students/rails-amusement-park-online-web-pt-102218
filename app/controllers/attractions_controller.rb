@@ -19,6 +19,25 @@ class AttractionsController < ApplicationController
     else
       render new_attraction_path
     end
+
+    def edit
+      @attraction = Attraction.find(params[:id])
+    end
+
+    def update
+      @attraction = Attraction.find(params[:id])
+      if @attraction.update(attraction_params)
+        flash[:notice] = "Attraction Successfully Updated"
+        redirect_to attraction_path(@attraction)
+      else 
+        redirect_to 'edit', alert: "Please fill in all forms."
+      end
+    end
+
+
+
+
+
   end
 
 
