@@ -18,6 +18,11 @@
             <span class="icon-bar"></span>
           </button>
         <a class="navbar-brand" href="<%= root_url %>"/>Home</a>
+        <% if session[:user_id].blank? %>
+          <%= link_to "Sign Up", signin_path, class: 'navbar-brand' %>
+        <% else %>
+          <%= link_to "Account", user_path(current_user), class: 'navbar-brand' %>
+        <% end %>
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
@@ -29,6 +34,7 @@
 
     <!-- content -->
     <div class="container"  role="main">
+      <%= render 'partials/flash'%>
       <%= yield %>
     </div>
   </body>
