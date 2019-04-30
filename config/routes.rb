@@ -8,5 +8,10 @@ get 'users/new', to: "users#new", as:"sign_up"
 post'signin', to: "sessions#create"
 get 'signin', to: "sessions#new"
 resources :users
+post '/take_ride' => 'users#ride', as: 'take_ride'
+
+scope '/admin' do
+  resources :attractions, only: [:new, :create, :edit, :update, :destoy]
+end
 
 end

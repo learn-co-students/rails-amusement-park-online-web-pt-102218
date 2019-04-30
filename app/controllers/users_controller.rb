@@ -22,6 +22,12 @@ class UsersController < ApplicationController
         end
     end
 
+    def ride
+        @ride = Ride.new(user_id: current_user.id, attraction_id: params[:format])
+        msg = @ride.take_ride
+        redirect_to user_path(current_user), :alert => msg
+    end
+
     private
 
     def user_params
