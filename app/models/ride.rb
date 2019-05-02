@@ -4,16 +4,19 @@ class Ride < ActiveRecord::Base
 
   def take_ride
     # byebug
-    error = 'Sorry.'
-    error += " You do not have enough tickets to ride the #{attraction.name}." if user.tickets < attraction.tickets
-    error += " You are not tall enough to ride the #{attraction.name}." if user.height < attraction.min_height
-    if error == 'Sorry.'
-      self.user.tickets -= self.attraction.tickets
-      self.user.nausea += self.attraction.nausea_rating
-      self.user.happiness += self.attraction.happiness_rating
-      self.user.save
+    message = ''
+    message += " You do not have enough tickets to ride the #{attraction.name}." if user.tickets < attraction.tickets
+    message += " You are not tall enough to ride the #{attraction.name}." if user.height < attraction.min_height
+    # byebug
+    if message.blank?
+      user.tickets -= attraction.tickets
+      user.nausea += attraction.nausea_rating
+      user.happiness += attraction.happiness_rating
+      user.save
+      message = "Thanks for riding the #{attraction.name}!"
     else
-      error
+      message = 'Sorry.' + message 
     end
+    return message
   end
 end
