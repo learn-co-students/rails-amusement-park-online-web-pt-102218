@@ -1,0 +1,13 @@
+<% if @admin %>
+<%= link_to 'New Attraction', new_attraction_path %>
+<% end %>
+
+
+
+<% @attractions.all.each do |attr| %>
+  <% if @admin %>
+    <p><%= link_to "Show #{attr.name}", attraction_path(attr)%></p>
+  <% else %>
+    <p><%= link_to "Go on #{attr.name}", attraction_path(attr) %></p>
+  <% end %>
+<% end %>

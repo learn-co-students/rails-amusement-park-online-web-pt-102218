@@ -5,9 +5,11 @@ Rails.application.routes.draw do
   root 'welcome#home'
   get '/signin', to: 'sessions#new'
   post '/signin', to: 'sessions#create'
+  get '/logout', to: 'sessions#destroy'
+  post '/attractions/:id', to: 'rides#create'
 
   namespace :admin do
-  resources :stats, only: [:index]
+    resources :stats, only: [:index]
 end
 
 

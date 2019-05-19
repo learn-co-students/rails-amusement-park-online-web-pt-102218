@@ -1,5 +1,4 @@
 <h1><%=@user.name%></h1>
-<% binding.pry %>
 <% if @user.admin %>
   <h2>ADMIN</h2>
 <% end %>
@@ -11,3 +10,6 @@
 
   <h3>Height: <%=@user.height%></h3>
 <% end %>
+
+<%= link_to 'See attractions', attractions_path %>
+<%= link_to 'Log Out', '/logout' %>
