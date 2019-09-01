@@ -1,0 +1,11 @@
+<h2><%= @user.name %></h2>
+<%= @user.mood %>
+
+<% if @user.nausea < @user.happiness %>
+    <p>Mood is happy</p>
+<%else%>
+    <p>Mood is nauseous</p>
+#binding.pry
+<%end%>
+<p><%= @user.height%></p>
+<p><%= @user.tickets%></p>
