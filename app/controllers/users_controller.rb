@@ -1,6 +1,6 @@
 class UsersController < ApplicationController 
 
-    before_action :authenticate_user, only: [:show]
+    #before_action :authenticate_user, only: [:show]
     def new 
         @user = User.new
     end
@@ -16,12 +16,15 @@ class UsersController < ApplicationController
     end
 
     def show 
+        
         @user = User.find_by(id: params[:id])
-        if !current_user.admin
+        #binding.pry
+        #if !current_user.admin
             if current_user != @user
                 redirect_to root_path
             end
-        end
+       # end
+       
         #if session[:user_id] != nil
          #   @user = User.find_by(id: session[:user_id])
         #else 

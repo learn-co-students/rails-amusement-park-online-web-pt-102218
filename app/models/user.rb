@@ -3,14 +3,16 @@ class User < ActiveRecord::Base
     has_many :rides 
     has_many :attractions, :through => :rides
 
-    validates :password, :presence => true
+    #validates :password, :presence => true
 
     def mood 
-        h = self.happiness
-        n = self.nausea
-        if n > h 
+        #h = self.happiness
+        #n = self.nausea
+        #binding.pry
+        if (nausea.to_f >= happiness.to_f) 
+            #binding.pry
             "sad" 
-        elsif h > n 
+        else 
             "happy" 
         end
     end

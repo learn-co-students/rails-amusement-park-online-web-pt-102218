@@ -1,0 +1,11 @@
+<p>Name: <%= @attraction.name %><p>
+<p>Total number of users: <p>
+<p>Ticket Requirement: <%= @attraction.tickets %></p>
+<p>Height Requirement: <%= @attraction.min_height %></p>
+<p>Nausea Rating: <%= @attraction.nausea_rating %></p>
+<p>Happiness Rating: <%= @attraction.happiness_rating %></p>
+
+    <%= button_to "Go on this ride", {controller: "rides", action: "create" }, params: {@ride[user_id] => @ride.user_id, @ride[attraction_id] => @ride.attraction_id}%>
+
+
+
