@@ -18,6 +18,9 @@ class UsersController < ApplicationController
     def show 
         
         @user = User.find_by(id: params[:id])
+      #binding.pry
+        #@ride = Ride.create(attraction_id: params[:attraction_id], #user_id: current_user.id)
+
         #binding.pry
         #if !current_user.admin
             if current_user != @user

@@ -4,8 +4,18 @@
 <p>Height Requirement: <%= @attraction.min_height %></p>
 <p>Nausea Rating: <%= @attraction.nausea_rating %></p>
 <p>Happiness Rating: <%= @attraction.happiness_rating %></p>
+<% if current_user.admin == true %>
+    <%= link_to "Edit Attraction", edit_attraction_path(@attraction) %> 
+<%end%>
 
-    <%= button_to "Go on this ride", {controller: "rides", action: "create" }, params: {@ride[user_id] => @ride.user_id, @ride[attraction_id] => @ride.attraction_id}%>
+    
+   <form action="/rides" method="post" >
+        <%= hidden_field_tag 'attraction_id', @attraction.id %>
+        <%= hidden_field_tag 'authenticity_token', form_authenticity_token %>
+        <%= submit_tag 'Go on this ride' %>
+   </form>
+
+
 
 
 
