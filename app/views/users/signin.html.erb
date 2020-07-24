@@ -1,0 +1,11 @@
+<%= link_to "Sign Up", '/signup' %>
+
+<%= form_for :user do |f| %>
+    <%= f.label :name %>
+    <%= f.collection_select :name, User.all, :name, :name %>
+    <%= f.label :password %>
+    FIGURE OUT WHY BELOW IS THAT WAY
+    <%= f.password_field :password, id: "password" %>
+  
+    <%= f.submit "Sign In" %>
+<% end %>

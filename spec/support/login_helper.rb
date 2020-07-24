@@ -19,7 +19,7 @@ module LoginHelper
   def admin_signup
     fill_in("user[name]", :with => "Walt Disney")
     fill_in("user[password]", :with => "password")
-    find(:css, "#user_admin").set(true)
+    find(:css, "#user_admin", visible: false).set(true)
     click_button('Create User')
   end
 
