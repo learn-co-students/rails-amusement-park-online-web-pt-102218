@@ -1,0 +1,20 @@
+<% flash.each do |key, value| %>
+    <div class = "alert alert-<%=key%>"><%= value %>
+    </div>
+<%end%>
+<h2><%= @user.name %></h2>
+
+
+<p>Mood:<%= @user.mood %></p>
+<% if @user.admin == true %>
+ <p>ADMIN<p>
+ <%end%>
+
+
+#binding.pry
+<p><%= @user.height%></p>
+<p>Tickets: <%= @user.tickets%></p>
+#binding.pry
+
+<p><%= link_to 'Log Out', signout_path %>
+<p><%= link_to 'See attractions', attractions_path %>
