@@ -1,0 +1,14 @@
+
+<% require 'pry' %> 
+
+<%if current_user.admin %> 
+    <h1><%= link_to "New Attraction", new_attraction_path %> </h1> 
+    <% @attractions.each do |a| %> 
+        <%= link_to "Show #{a.name}", attraction_path(a) %> 
+    <%end %> 
+<% else %> 
+    <% @attractions.each do |a| %> 
+      <%= link_to "Go on #{a.name}", attraction_path(a) %>
+ <%end%> 
+ <%end%> 
+ 
