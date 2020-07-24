@@ -1,0 +1,15 @@
+<h1>Sign Up</h1>
+
+
+<% form_for(user) do |f| %>
+    <p><%= f.text_field :name, placeholder: "Name" %></p>
+    <p><%= f.text_field :tickets, placeholder: "How many tickets?"%></p>
+    <p><%= f.text_field :nausea, placeholder: "How nauseous 1-5?" %></p>
+    <p><%= f.text_field :happiness, placeholder: "How happy 1-5?" %></p>
+    <P><%= f.text_field :height, placeholder: "How tall are you (inches)"%></p>
+    <p><%= f.label :admin, "Check box if you are the park owner"</p>
+    <p><%= f.check_box :admin, :checked => false %></p>
+    <p><%= f.password_field :password, placeholder: "Password" %></p>
+    <%= f.submit %>
+<% end %>
+    

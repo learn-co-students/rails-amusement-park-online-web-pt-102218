@@ -18,6 +18,7 @@
             <span class="icon-bar"></span>
           </button>
         <a class="navbar-brand" href="<%= root_url %>"/>Home</a>
+        <%= render 'layouts/navbar' %>
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
@@ -28,7 +29,9 @@
     </div>
 
     <!-- content -->
+    
     <div class="container"  role="main">
+      <%= content_tag(:div, flash[:alert], :id => "flash_alert") if flash[:alert] %>
       <%= yield %>
     </div>
   </body>
