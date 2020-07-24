@@ -1,4 +1,4 @@
-class Ride < ActiveRecord::Base
+class RidesController < ApplicationController
     belongs_to :attraction
     belongs_to :user
 
